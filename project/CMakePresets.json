@@ -1,0 +1,77 @@
+{
+  "version": 8,
+  "configurePresets": [
+    {
+      "name": "Visual Studio Community 2022 Release - amd64",
+      "displayName": "Visual Studio Community 2022 Release - amd64",
+      "description": "将编译器用于 Visual Studio 17 2022 (x64 体系结构)",
+      "generator": "Visual Studio 17 2022",
+      "toolset": "host=x64",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+          "CMAKE_INSTALL_PREFIX": "${sourceDir}/output/${presetName}",
+          "CMAKE_C_COMPILER": "cl.exe",
+          "CMAKE_CXX_COMPILER": "cl.exe"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug-all",
+      "displayName": "编译全部项目",
+      "configurePreset": "Visual Studio Community 2022 Release - amd64",
+      "targets": ["ALL_BUILD"],
+      "configuration": "Debug"
+    },
+    {
+      "name": "debug-subprocess",
+      "displayName": "仅编译 subprocess",
+      "configurePreset": "Visual Studio Community 2022 Release - amd64",
+      "targets": ["CefSubprocess"],
+      "configuration": "Debug"
+    },
+    {
+      "name": "debug-tests",
+      "displayName": "仅编译 tests",
+      "configurePreset": "Visual Studio Community 2022 Release - amd64",
+      "targets": ["CefWrapperTest"],
+      "configuration": "Debug"
+    },
+    {
+      "name": "debug-wrapper",
+      "displayName": "仅编译 wrapper",
+      "configurePreset": "Visual Studio Community 2022 Release - amd64",
+      "targets": ["CefWrapper"],
+      "configuration": "Debug"
+    },
+    {
+      "name": "release-all",
+      "displayName": "编译全部项目 Release",
+      "configurePreset": "Visual Studio Community 2022 Release - amd64",
+      "targets": ["ALL_BUILD"],
+      "configuration": "Release"
+    },
+    {
+      "name": "release-subprocess",
+      "displayName": "仅编译 subprocess Release",
+      "configurePreset": "Visual Studio Community 2022 Release - amd64",
+      "targets": ["CefSubprocess"],
+      "configuration": "Release"
+    },
+    {
+      "name": "release-tests",
+      "displayName": "仅编译 tests Release",
+      "configurePreset": "Visual Studio Community 2022 Release - amd64",
+      "targets": ["CefWrapperTest"],
+      "configuration": "Release"
+    },
+    {
+      "name": "release-wrapper",
+      "displayName": "仅编译 wrapper Release",
+      "configurePreset": "Visual Studio Community 2022 Release - amd64",
+      "targets": ["CefWrapper"],
+      "configuration": "Release"
+    }
+  ]
+}

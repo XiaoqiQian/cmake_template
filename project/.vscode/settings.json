@@ -1,0 +1,24 @@
+{
+    // 1. 为C/C++指定默认格式化工具为Clang-Format
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    },
+    // 2. 配置C/C++插件使用Clang-Format
+    "C_Cpp.formatting": "clangFormat",
+    // 3. 指定Clang-Format可执行文件路径（相对项目根目录，确保便携）
+    "C_Cpp.clang_format_path": "${workspaceFolder}/clang-format.exe",
+    // 4. 指定Clang-Format配置文件路径（自动读取根目录的.clang-format）
+    "C_Cpp.clang_format_style": "file",
+    // 5. 禁用其他可能的格式化工具，避免冲突
+    "editor.formatOnSaveMode": "file",
+    "C_Cpp.intelliSenseEngine": "default",
+    // 6. 可选：格式化时自动整理#include顺序（遵循.clang-format配置）
+    "C_Cpp.clang_format_sortIncludes": true
+}
