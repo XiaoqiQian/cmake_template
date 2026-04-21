@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(CefWrapperProject LANGUAGES CXX)
+project(TemplateProject LANGUAGES CXX)
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     # Release模式禁用优化，用于调试
@@ -9,7 +9,7 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
 endif()
 
-add_subdirectory(subprocess)
+add_subdirectory(subproject)
 #add_subdirectory(wrapper)
 #add_subdirectory(tests)
 

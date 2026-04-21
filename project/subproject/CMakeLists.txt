@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(CefSubprocess VERSION 1.0.1 LANGUAGES CXX)
+project(Subproject VERSION 1.0.1 LANGUAGES CXX)
 
 set(USE_QT OFF)
 
@@ -44,10 +44,10 @@ file(GLOB_RECURSE PROJECT_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp"
-    # "${CMAKE_SOURCE_DIR}/common/*.h"
-    # "${CMAKE_SOURCE_DIR}/common/*.cpp"
-    # "${CMAKE_SOURCE_DIR}/common/*.c"
-    # "${CMAKE_SOURCE_DIR}/common/*.hpp"
+    "${CMAKE_SOURCE_DIR}/common/*.h"
+    "${CMAKE_SOURCE_DIR}/common/*.cpp"
+    "${CMAKE_SOURCE_DIR}/common/*.c"
+    "${CMAKE_SOURCE_DIR}/common/*.hpp"
 )
 # 排除指定文件的添加
 # list(FILTER PROJECT_SOURCES EXCLUDE REGEX "*/test/*")
@@ -138,9 +138,12 @@ endif()
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/include
-    # ${CMAKE_SOURCE_DIR}/3rdparty
+    ${CMAKE_SOURCE_DIR}/common
+    ${CMAKE_SOURCE_DIR}/common/config
+    ${CMAKE_SOURCE_DIR}/3rdparty
     # ${CMAKE_SOURCE_DIR}/3rdparty/cef
-    # ${CMAKE_SOURCE_DIR}/3rdparty/spdlog
+    ${CMAKE_SOURCE_DIR}/3rdparty/json
+    ${CMAKE_SOURCE_DIR}/3rdparty/spdlog
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
@@ -177,8 +180,8 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     # 设置管理员权限
     # set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/MANIFESTUAC(\"level='requireAdministrator' uiAccess='false'\") /SUBSYSTEM:WINDOWS")
 
-    # 隐藏cmd窗口
-    set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/SUBSYSTEM:WINDOWS")
+    # 隐藏cmd窗口(做windows窗口程序需要配置，winmain入口)
+    # set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/SUBSYSTEM:WINDOWS")
 endif()
 
 # # 每次构建后自动拷贝

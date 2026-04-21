@@ -1,0 +1,44 @@
+{
+    "commandLines": {
+        "switches": [
+            "high-dpi-support",
+            "no-sandbox",
+            "disable-plugins",
+            "disable-gpu-compositing",
+            "hide-crash-restore-bubble",
+            "ignore-certificate-errors"
+        ],
+        "switchWithValue": {
+            "lang": "zh-cn",
+            "log-file": "log/cef.log",
+            "log-severity": "info",
+            "log-items": "pid,tid,timestamp",
+            "resource-dir-path": "",
+            "locales-dir-path": "",
+            "browser-subprocess-path": "CefSubprocess.exe"
+        }
+    },
+    "settings": {
+        "osrEnabled": false,
+        "devToolsEnabled": true,
+        "chromeRuntimeEnabled": false,
+        "cachePath": ".cefCache/",
+        "maxCacheSizeByte": 104857600,
+        "defaultUrl": "about:blank",
+        "browserBackgroundColorARGB": [
+            255,
+            255,
+            255,
+            255
+        ],
+        "minimumFontPixelSize": 6
+    },
+    "log": {
+        "dir": "log/",
+        "maxFileSizeMB": 10,
+        "maxFileNum": 5,
+        "pattern": "[%Y-%m-%d %H:%M:%S.%e][%l][%P|%t]%v",
+        "logLevel": 0,
+        "flushLevel": 0
+    }
+}

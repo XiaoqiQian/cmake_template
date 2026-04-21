@@ -18,59 +18,17 @@
   ],
   "buildPresets": [
     {
-      "name": "debug-all",
-      "displayName": "编译全部项目",
+      "name": "debug",
+      "displayName": "msvc2022-debug-config",
       "configurePreset": "Visual Studio Community 2022 Release - amd64",
-      "targets": ["ALL_BUILD"],
+      "targets": ["ALL_BUILD","Subproject"],
       "configuration": "Debug"
     },
     {
-      "name": "debug-subprocess",
-      "displayName": "仅编译 subprocess",
+      "name": "release",
+      "displayName": "msvc2022-release-config",
       "configurePreset": "Visual Studio Community 2022 Release - amd64",
-      "targets": ["CefSubprocess"],
-      "configuration": "Debug"
-    },
-    {
-      "name": "debug-tests",
-      "displayName": "仅编译 tests",
-      "configurePreset": "Visual Studio Community 2022 Release - amd64",
-      "targets": ["CefWrapperTest"],
-      "configuration": "Debug"
-    },
-    {
-      "name": "debug-wrapper",
-      "displayName": "仅编译 wrapper",
-      "configurePreset": "Visual Studio Community 2022 Release - amd64",
-      "targets": ["CefWrapper"],
-      "configuration": "Debug"
-    },
-    {
-      "name": "release-all",
-      "displayName": "编译全部项目 Release",
-      "configurePreset": "Visual Studio Community 2022 Release - amd64",
-      "targets": ["ALL_BUILD"],
-      "configuration": "Release"
-    },
-    {
-      "name": "release-subprocess",
-      "displayName": "仅编译 subprocess Release",
-      "configurePreset": "Visual Studio Community 2022 Release - amd64",
-      "targets": ["CefSubprocess"],
-      "configuration": "Release"
-    },
-    {
-      "name": "release-tests",
-      "displayName": "仅编译 tests Release",
-      "configurePreset": "Visual Studio Community 2022 Release - amd64",
-      "targets": ["CefWrapperTest"],
-      "configuration": "Release"
-    },
-    {
-      "name": "release-wrapper",
-      "displayName": "仅编译 wrapper Release",
-      "configurePreset": "Visual Studio Community 2022 Release - amd64",
-      "targets": ["CefWrapper"],
+      "targets": ["ALL_BUILD","Subproject"],
       "configuration": "Release"
     }
   ]
